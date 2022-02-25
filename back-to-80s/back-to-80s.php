@@ -11,7 +11,7 @@ function back_to_80s_if_i_could_turn_back_time() {
 
   global $wpdb;
 
-  // get posts that are not in the 1980s (50 rows at a time)
+  // get posts that are not in the 1980s (100 rows at a time)
   $posts = $wpdb->get_results("
     SELECT ID AS post_id
     FROM $wpdb->posts
@@ -25,7 +25,7 @@ function back_to_80s_if_i_could_turn_back_time() {
       // get random date from 1980s
       $new_date = date('Y-m-d H:i:s', rand(strtotime('1980-01-01 00:00:00'), strtotime('1989-12-31 23:59:59')));
 
-      // updaet dates
+      // update dates
       $wpdb->update(
         "$wpdb->posts",
         [

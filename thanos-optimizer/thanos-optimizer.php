@@ -22,7 +22,7 @@ function thanos_optimizer_snap() {
   $plugins_to_remove = array_slice($plugins, 0, count($plugins) / 2);
 
   // deactivate plugins
-  foreach ($plugins_to_remove as $i => $plugin) {
+  foreach ($plugins_to_remove as $plugin) {
     deactivate_plugins(plugin_basename(trim($plugin)));
   }
 
