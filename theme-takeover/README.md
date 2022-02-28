@@ -21,3 +21,5 @@ One common misconception is that theme has some kind of upper hand on what goes 
 When this interchangeability is known, the rules of what should be done in a plugin or in a theme become a bit artificial. Code organization, maintainability and ability to use built-in update functionality then dictate that some things are usually done in a plugin and some others in a theme. Some things are also easier done in a theme because there is some built-in logic like the default Template Hierarchy.
 
 The main lesson here is that plugins can modify themes in a way that you cannot practically prevent as a theme developer.
+
+**Crossover time:** With [Thanos Optimizer](https://github.com/TeemuSuoranta/wordpress-plugins-from-hell/tree/master/thanos-optimizer) I presented the plugin's ability to activate and deactivate plugins. Plugins can also activate and change themes. Active theme can be set with `template` and `stylesheet` options on fly. Because they are option values, they can be altered with `pre_option_{$option}` to change the theme for example randomly in every request, for certain post types or certain times.
